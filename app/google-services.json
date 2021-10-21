@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "806900747398",
+    "project_id": "chatmessenger-26a7a",
+    "storage_bucket": "chatmessenger-26a7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806900747398:android:b1017c60fae8580596d507",
+        "android_client_info": {
+          "package_name": "xyz.gorelov.chatmessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "806900747398-4ctrgff9qf06j2tosivordqhbf8ecg2q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmUsduxlnPtoS_XRhPGXdP6yFCat-3GlY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "806900747398-4ctrgff9qf06j2tosivordqhbf8ecg2q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
