@@ -9,7 +9,6 @@
     android:padding="8dp"
     android:orientation="vertical">
 
-
     <com.andreabaccega.widget.FormEditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
@@ -34,7 +33,6 @@
         whatever:testErrorString="@string/error_email_address_not_valid"
         whatever:emptyErrorString="@string/error_field_must_not_be_empty"/>
 
-
     <com.andreabaccega.widget.FormEditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
@@ -54,11 +52,9 @@
         android:textColor="@color/darkGrey"
         android:textColorHint="@android:color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/etConfirmPassword"
-
         app:layout_constraintTop_toBottomOf="@+id/etEmail"
         tools:layout_editor_absoluteX="84dp"
         whatever:emptyErrorString="@string/error_field_must_not_be_empty"/>
-
 
     <com.andreabaccega.widget.FormEditText
         android:id="@+id/etConfirmPassword"
