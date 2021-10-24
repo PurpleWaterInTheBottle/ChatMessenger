@@ -3,7 +3,7 @@ package xyz.gorelov.chatmessenger.remote.core
 import retrofit2.Call
 import retrofit2.Response
 import xyz.gorelov.chatmessenger.domain.type.Either
-import xyz.gorelov.chatmessenger.domain.type.exception.Failure
+import xyz.gorelov.chatmessenger.domain.type.Failure
 import javax.inject.Inject
 import javax.inject.Singleton
 

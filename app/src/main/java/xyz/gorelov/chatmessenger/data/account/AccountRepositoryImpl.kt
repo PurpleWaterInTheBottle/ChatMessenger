@@ -4,7 +4,7 @@ import xyz.gorelov.chatmessenger.domain.account.AccountEntity
 import xyz.gorelov.chatmessenger.domain.account.AccountRepository
 import xyz.gorelov.chatmessenger.domain.type.Either
 import xyz.gorelov.chatmessenger.domain.type.None
-import xyz.gorelov.chatmessenger.domain.type.exception.Failure
+import xyz.gorelov.chatmessenger.domain.type.Failure
 import xyz.gorelov.chatmessenger.domain.type.flatMap
 import java.util.*
 

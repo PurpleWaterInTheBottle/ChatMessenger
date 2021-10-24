@@ -3,7 +3,7 @@ package xyz.gorelov.chatmessenger.presentation.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import xyz.gorelov.chatmessenger.domain.type.HandleOnce
-import xyz.gorelov.chatmessenger.domain.type.exception.Failure
+import xyz.gorelov.chatmessenger.domain.type.Failure
 
 abstract class BaseViewModel : ViewModel() {
 

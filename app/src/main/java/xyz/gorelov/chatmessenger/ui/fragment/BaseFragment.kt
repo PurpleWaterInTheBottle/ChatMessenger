@@ -9,10 +9,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import xyz.gorelov.chatmessenger.R
-import xyz.gorelov.chatmessenger.domain.type.exception.Failure
+import xyz.gorelov.chatmessenger.domain.type.Failure
 import xyz.gorelov.chatmessenger.ui.activity.BaseActivity
 import xyz.gorelov.chatmessenger.ui.activity.base
-import kotlinx.android.synthetic.main.toolbar.*
 import javax.inject.Inject
 
 abstract class BaseFragment : Fragment() {

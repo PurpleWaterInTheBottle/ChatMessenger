@@ -2,7 +2,7 @@ package xyz.gorelov.chatmessenger.data.account
 
 import xyz.gorelov.chatmessenger.domain.type.Either
 import xyz.gorelov.chatmessenger.domain.type.None
-import xyz.gorelov.chatmessenger.domain.type.exception.Failure
+import xyz.gorelov.chatmessenger.domain.type.Failure
 
 interface AccountRemote {
     fun register(

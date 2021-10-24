@@ -3,7 +3,7 @@ package xyz.gorelov.chatmessenger.cache
 import android.content.SharedPreferences
 import xyz.gorelov.chatmessenger.domain.type.Either
 import xyz.gorelov.chatmessenger.domain.type.None
-import xyz.gorelov.chatmessenger.domain.type.exception.Failure
+import xyz.gorelov.chatmessenger.domain.type.Failure
 import javax.inject.Inject
 
 class SharedPrefsManager @Inject constructor(private val prefs: SharedPreferences) {

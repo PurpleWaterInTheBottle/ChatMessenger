@@ -2,7 +2,7 @@ package xyz.gorelov.chatmessenger.domain.account
 
 import xyz.gorelov.chatmessenger.domain.type.Either
 import xyz.gorelov.chatmessenger.domain.type.None
-import xyz.gorelov.chatmessenger.domain.type.exception.Failure
+import xyz.gorelov.chatmessenger.domain.type.Failure
 
 interface AccountRepository {
     fun login(email: String, password: String): Either<Failure, AccountEntity>
