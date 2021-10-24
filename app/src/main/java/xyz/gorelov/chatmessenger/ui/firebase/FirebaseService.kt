@@ -1,4 +1,4 @@
-package xyz.gorelov.chatmessenger.ui.service
+package xyz.gorelov.chatmessenger.ui.firebase
 
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessagingService

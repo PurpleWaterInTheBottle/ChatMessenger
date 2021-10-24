@@ -1,4 +1,4 @@
-package xyz.gorelov.chatmessenger.ui.fragment
+package xyz.gorelov.chatmessenger.ui.core
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import xyz.gorelov.chatmessenger.R
 import xyz.gorelov.chatmessenger.domain.type.Failure
-import xyz.gorelov.chatmessenger.ui.activity.BaseActivity
-import xyz.gorelov.chatmessenger.ui.activity.base
+import xyz.gorelov.chatmessenger.ui.core.navigation.Navigator
 import javax.inject.Inject
 
 abstract class BaseFragment : Fragment() {
@@ -20,6 +19,9 @@ abstract class BaseFragment : Fragment() {
 
     open val titleToolbar = R.string.app_name
     open val showToolbar = true
+
+    @Inject
+    lateinit var navigator: Navigator
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory

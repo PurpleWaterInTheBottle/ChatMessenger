@@ -6,9 +6,13 @@ import xyz.gorelov.chatmessenger.presentation.injection.AppModule
 import xyz.gorelov.chatmessenger.presentation.injection.CacheModule
 import xyz.gorelov.chatmessenger.presentation.injection.RemoteModule
 import xyz.gorelov.chatmessenger.presentation.injection.ViewModelModule
-import xyz.gorelov.chatmessenger.ui.activity.RegisterActivity
-import xyz.gorelov.chatmessenger.ui.fragment.RegisterFragment
-import xyz.gorelov.chatmessenger.ui.service.FirebaseService
+import xyz.gorelov.chatmessenger.ui.core.navigation.RouteActivity
+import xyz.gorelov.chatmessenger.ui.register.RegisterActivity
+import xyz.gorelov.chatmessenger.ui.register.RegisterFragment
+import xyz.gorelov.chatmessenger.ui.firebase.FirebaseService
+import xyz.gorelov.chatmessenger.ui.home.ChatsFragment
+import xyz.gorelov.chatmessenger.ui.home.HomeActivity
+import xyz.gorelov.chatmessenger.ui.login.LoginFragment
 import javax.inject.Singleton
 
 class App : Application() {
@@ -35,9 +39,13 @@ interface AppComponent {
 
     //activities
     fun inject(activity: RegisterActivity)
+    fun inject(activity: RouteActivity)
+    fun inject(activity: HomeActivity)
 
     //fragments
     fun inject(fragment: RegisterFragment)
+    fun inject(fragment: LoginFragment)
+    fun inject(fragment: ChatsFragment)
 
     //services
     fun inject(service: FirebaseService)

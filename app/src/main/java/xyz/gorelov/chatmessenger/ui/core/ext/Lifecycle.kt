@@ -1,4 +1,4 @@
-package xyz.gorelov.chatmessenger.ui.ext
+package xyz.gorelov.chatmessenger.ui.core.ext
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData

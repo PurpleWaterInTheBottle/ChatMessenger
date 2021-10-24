@@ -1,4 +1,4 @@
-package xyz.gorelov.chatmessenger.ui.activity
+package xyz.gorelov.chatmessenger.ui.core
 
 import android.app.Activity
 import android.content.Context
@@ -14,8 +14,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import xyz.gorelov.chatmessenger.R
 import xyz.gorelov.chatmessenger.domain.type.Failure
-import xyz.gorelov.chatmessenger.ui.fragment.BaseFragment
 import kotlinx.android.synthetic.main.toolbar.*
+import xyz.gorelov.chatmessenger.ui.core.navigation.Navigator
 import javax.inject.Inject
 
 abstract class BaseActivity : AppCompatActivity() {
@@ -24,6 +24,11 @@ abstract class BaseActivity : AppCompatActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    @Inject
+    lateinit var navigator: Navigator
+
+    open val contentId = R.layout.activity_layout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
