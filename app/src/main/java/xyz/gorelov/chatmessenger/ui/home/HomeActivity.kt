@@ -12,6 +12,7 @@ import xyz.gorelov.chatmessenger.ui.core.BaseActivity
 import xyz.gorelov.chatmessenger.ui.core.ext.onFailure
 import xyz.gorelov.chatmessenger.ui.core.ext.onSuccess
 import kotlinx.android.synthetic.main.activity_navigation.*
+import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.navigation.*
 import kotlinx.android.synthetic.main.toolbar.*
 
@@ -25,6 +26,7 @@ class HomeActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(contentId)
 
         App.appComponent.inject(this)
 
