@@ -10,6 +10,8 @@ import xyz.gorelov.chatmessenger.ui.core.navigation.RouteActivity
 import xyz.gorelov.chatmessenger.ui.register.RegisterActivity
 import xyz.gorelov.chatmessenger.ui.register.RegisterFragment
 import xyz.gorelov.chatmessenger.ui.firebase.FirebaseService
+import xyz.gorelov.chatmessenger.ui.friends.FriendRequestsFragment
+import xyz.gorelov.chatmessenger.ui.friends.FriendsFragment
 import xyz.gorelov.chatmessenger.ui.home.ChatsFragment
 import xyz.gorelov.chatmessenger.ui.home.HomeActivity
 import xyz.gorelov.chatmessenger.ui.login.LoginFragment
@@ -46,6 +48,8 @@ interface AppComponent {
     fun inject(fragment: RegisterFragment)
     fun inject(fragment: LoginFragment)
     fun inject(fragment: ChatsFragment)
+    fun inject(fragment: FriendsFragment)
+    fun inject(fragment: FriendRequestsFragment)
 
     //services
     fun inject(service: FirebaseService)
