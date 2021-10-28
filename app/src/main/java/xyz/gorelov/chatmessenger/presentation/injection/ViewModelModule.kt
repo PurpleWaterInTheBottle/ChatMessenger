@@ -7,6 +7,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import xyz.gorelov.chatmessenger.presentation.viewmodel.AccountViewModel
 import xyz.gorelov.chatmessenger.presentation.viewmodel.FriendsViewModel
+import xyz.gorelov.chatmessenger.presentation.viewmodel.MediaViewModel
 import xyz.gorelov.chatmessenger.presentation.viewmodel.ViewModelFactory
 
 @Module
@@ -23,4 +24,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(FriendsViewModel::class)
     abstract fun bindFriendsViewModel(friendsViewModel: FriendsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MediaViewModel::class)
+    abstract fun bindMediaViewModel(mediaViewModel: MediaViewModel): ViewModel
 }
