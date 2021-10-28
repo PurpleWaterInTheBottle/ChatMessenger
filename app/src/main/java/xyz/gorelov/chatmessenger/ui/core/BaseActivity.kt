@@ -2,6 +2,7 @@ package xyz.gorelov.chatmessenger.ui.core
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -28,6 +29,9 @@ abstract class BaseActivity : AppCompatActivity() {
     @Inject
     lateinit var navigator: Navigator
 
+    @Inject
+    lateinit var permissionManager: PermissionManager
+
     open val contentId = R.layout.activity_layout
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +40,12 @@ abstract class BaseActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
         addFragment(savedInstanceState)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        fragment.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onBackPressed() {
@@ -83,6 +93,7 @@ abstract class BaseActivity : AppCompatActivity() {
             is Failure.TokenError -> navigator.showLogin(this)
             is Failure.AlreadyFriendError -> showMessage(getString(R.string.error_already_friend))
             is Failure.AlreadyRequestedFriendError -> showMessage(getString(R.string.error_already_requested_friend))
+            is Failure.FilePickError -> showMessage(getString(R.string.error_picking_file))
         }
     }
 
@@ -94,6 +105,11 @@ abstract class BaseActivity : AppCompatActivity() {
         val vm = ViewModelProviders.of(this, viewModelFactory)[T::class.java]
         vm.body()
         return vm
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        permissionManager.requestObject?.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 }
 
