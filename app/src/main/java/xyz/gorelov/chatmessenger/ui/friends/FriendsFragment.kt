@@ -30,6 +30,7 @@ class FriendsFragment : BaseListFragment() {
         friendsViewModel = viewModel {
             onSuccess(friendsData, ::handleFriends)
             onSuccess(deleteFriendData, ::handleDeleteFriend)
+            onSuccess(progressData, ::updateProgress)
             onFailure(failureData, ::handleFailure)
         }
 
