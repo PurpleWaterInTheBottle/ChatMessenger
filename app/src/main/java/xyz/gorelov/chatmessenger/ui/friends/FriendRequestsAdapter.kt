@@ -8,7 +8,7 @@ import xyz.gorelov.chatmessenger.ui.core.BaseAdapter
 
 open class FriendRequestsAdapter : BaseAdapter<FriendRequestsAdapter.FriendRequestViewHolder>() {
 
-    override fun createHolder(parent: ViewGroup): FriendRequestViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FriendRequestViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = ItemFriendRequestBinding.inflate(layoutInflater)
         return FriendRequestViewHolder(binding)

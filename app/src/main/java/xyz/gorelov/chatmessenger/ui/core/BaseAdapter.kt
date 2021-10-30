@@ -10,8 +10,6 @@ abstract class BaseAdapter<VH : BaseAdapter.BaseViewHolder> : RecyclerView.Adapt
 
     var onClick: OnClick? = null
 
-    abstract fun createHolder(parent: ViewGroup): VH
-
     override fun getItemCount(): Int {
         return items.size
     }
@@ -20,10 +18,6 @@ abstract class BaseAdapter<VH : BaseAdapter.BaseViewHolder> : RecyclerView.Adapt
         holder.bind(getItem(position))
 
         holder.onClick = onClick
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        return createHolder(parent)
     }
 
     fun getItem(position: Int): Any {

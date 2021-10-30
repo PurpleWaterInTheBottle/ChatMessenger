@@ -7,8 +7,14 @@
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/drawable/contact_divider.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/drawable/ic_account_circle.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/drawable/ic_account_circle_black_24dp.xml" value="0.1" />
+        <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/drawable/ic_arrow_back.xml" value="0.1" />
+        <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/drawable/ic_camera.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/drawable/ic_close_black_24dp.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/drawable/ic_done_black_24dp.xml" value="0.1" />
+        <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/drawable/ic_info.xml" value="0.1" />
+        <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/drawable/ic_send.xml" value="0.1" />
+        <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/drawable/message_me.xml" value="0.1" />
+        <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/drawable/message_other.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/drawable/rounded_button.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/drawable/rounded_edittext_register_login.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/activity_layout.xml" value="0.1" />
@@ -19,11 +25,15 @@
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/fragment_chats.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/fragment_list.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/fragment_messages.xml" value="0.128" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/fragment_register.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/fragment_user.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/inner_fragment_list.xml" value="0.1" />
+        <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/item_chat.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/item_friend.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/item_friend_request.xml" value="0.1" />
+        <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/item_message_me.xml" value="0.2" />
+        <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/item_message_other.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/navigation.xml" value="0.20710059171597633" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="..\:/TestProjects/ChatMessenger/app/src/main/res/xml/provider_paths.xml" value="0.1" />

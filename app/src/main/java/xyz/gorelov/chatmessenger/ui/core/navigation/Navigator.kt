@@ -15,6 +15,7 @@ import xyz.gorelov.chatmessenger.remote.service.ApiService
 import xyz.gorelov.chatmessenger.ui.account.AccountActivity
 import xyz.gorelov.chatmessenger.ui.core.PermissionManager
 import xyz.gorelov.chatmessenger.ui.home.HomeActivity
+import xyz.gorelov.chatmessenger.ui.home.MessagesActivity
 import xyz.gorelov.chatmessenger.ui.login.LoginActivity
 import xyz.gorelov.chatmessenger.ui.register.RegisterActivity
 import xyz.gorelov.chatmessenger.ui.user.UserActivity
@@ -79,6 +80,13 @@ class Navigator
         bundle.putString(ApiService.PARAM_EMAIL, friendEntity.email)
         bundle.putString(ApiService.PARAM_STATUS, friendEntity.status)
         context.startActivity<UserActivity>(args = bundle)
+    }
+
+    fun showChatWithContact(contactId: Long, contactName: String, context: Context) {
+        val bundle = Bundle()
+        bundle.putLong(ApiService.PARAM_CONTACT_ID, contactId)
+        bundle.putString(ApiService.PARAM_NAME, contactName)
+        context.startActivity<MessagesActivity>(args = bundle)
     }
 
     fun showPickFromDialog(activity: AppCompatActivity, onPick: (fromCamera: Boolean) -> Unit) {
