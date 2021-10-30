@@ -9,6 +9,7 @@ import xyz.gorelov.chatmessenger.cache.ChatDatabase
 import xyz.gorelov.chatmessenger.cache.SharedPrefsManager
 import xyz.gorelov.chatmessenger.data.account.AccountCache
 import xyz.gorelov.chatmessenger.data.friends.FriendsCache
+import xyz.gorelov.chatmessenger.data.messages.MessagesCache
 import javax.inject.Singleton
 
 @Module
@@ -34,5 +35,11 @@ class CacheModule {
     @Singleton
     fun provideFriendsCache(chatDatabase: ChatDatabase): FriendsCache {
         return chatDatabase.friendsDao
+    }
+
+    @Provides
+    @Singleton
+    fun provideMessagesCache(chatDatabase: ChatDatabase): MessagesCache {
+        return chatDatabase.messagesDao
     }
 }

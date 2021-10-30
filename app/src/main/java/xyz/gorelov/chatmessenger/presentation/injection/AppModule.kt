@@ -10,9 +10,13 @@ import xyz.gorelov.chatmessenger.data.friends.FriendsCache
 import xyz.gorelov.chatmessenger.data.friends.FriendsRemote
 import xyz.gorelov.chatmessenger.data.friends.FriendsRepositoryImpl
 import xyz.gorelov.chatmessenger.data.media.MediaRepositoryImpl
+import xyz.gorelov.chatmessenger.data.messages.MessagesCache
+import xyz.gorelov.chatmessenger.data.messages.MessagesRemote
+import xyz.gorelov.chatmessenger.data.messages.MessagesRepositoryImpl
 import xyz.gorelov.chatmessenger.domain.account.AccountRepository
 import xyz.gorelov.chatmessenger.domain.friends.FriendsRepository
 import xyz.gorelov.chatmessenger.domain.media.MediaRepository
+import xyz.gorelov.chatmessenger.domain.messages.MessagesRepository
 import javax.inject.Singleton
 
 @Module
@@ -38,5 +42,11 @@ class AppModule(private val context: Context) {
     @Singleton
     fun provideMediaRepository(context: Context): MediaRepository {
         return MediaRepositoryImpl(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideMessagesRepository(remote: MessagesRemote, cache: MessagesCache, accountCache: AccountCache): MessagesRepository {
+        return MessagesRepositoryImpl(remote, cache, accountCache)
     }
 }
