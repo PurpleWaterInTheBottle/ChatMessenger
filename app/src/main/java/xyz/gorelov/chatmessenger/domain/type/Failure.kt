@@ -11,6 +11,8 @@ sealed class Failure {
     object TokenError : Failure()
 
     object EmailAlreadyExistError : Failure()
+    object EmailNotRegisteredError : Failure()
+    object CantSendEmailError : Failure()
 
     object AlreadyFriendError : Failure()
     object AlreadyRequestedFriendError : Failure()
