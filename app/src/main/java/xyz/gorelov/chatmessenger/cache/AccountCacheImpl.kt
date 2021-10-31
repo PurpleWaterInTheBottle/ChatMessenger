@@ -7,8 +7,9 @@ import xyz.gorelov.chatmessenger.domain.type.None
 import xyz.gorelov.chatmessenger.domain.type.Failure
 import javax.inject.Inject
 
-class AccountCacheImpl @Inject constructor(private val prefsManager: SharedPrefsManager) :
-    AccountCache {
+class AccountCacheImpl @Inject constructor(
+    private val prefsManager: SharedPrefsManager,
+    private val chatDatabase: ChatDatabase) : AccountCache {
 
     override fun saveToken(token: String): Either<Failure, None> {
         return prefsManager.saveToken(token)
@@ -19,6 +20,7 @@ class AccountCacheImpl @Inject constructor(private val prefsManager: SharedPrefs
     }
 
     override fun logout(): Either<Failure, None> {
+        chatDatabase.clearAllTables()
         return prefsManager.removeAccount()
     }
 

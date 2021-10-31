@@ -9,7 +9,7 @@ import xyz.gorelov.chatmessenger.cache.messages.MessagesDao
 import xyz.gorelov.chatmessenger.domain.friends.FriendEntity
 import xyz.gorelov.chatmessenger.domain.messages.MessageEntity
 
-@Database(entities = [FriendEntity::class, MessageEntity::class], version = 5, exportSchema = false)
+@Database(entities = [FriendEntity::class, MessageEntity::class], version = 8, exportSchema = false)
 abstract class ChatDatabase : RoomDatabase() {
     abstract val friendsDao: FriendsDao
     abstract val messagesDao: MessagesDao
