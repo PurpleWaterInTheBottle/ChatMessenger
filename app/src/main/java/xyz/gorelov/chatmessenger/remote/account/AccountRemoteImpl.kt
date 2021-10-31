@@ -47,6 +47,14 @@ class AccountRemoteImpl @Inject constructor(
             password, status, token, image))) { it.user }
     }
 
+    override fun updateAccountLastSeen(
+        userId: Long,
+        token: String,
+        lastSeen: Long
+    ): Either<Failure, None> {
+        return request.make(service.updateUserLastSeen(createUpdateLastSeenMap(userId, token, lastSeen))) { None() }
+    }
+
     private fun createRegisterMap(
         email: String,
         name: String,
@@ -101,6 +109,18 @@ class AccountRemoteImpl @Inject constructor(
             map.put(ApiService.PARAM_IMAGE_NEW, image)
             map.put(ApiService.PARAM_IMAGE_NEW_NAME, "user_${id}_${Date().time}_photo")
         }
+        return map
+    }
+
+    private fun createUpdateLastSeenMap(
+        userId: Long,
+        token: String,
+        lastSeen: Long
+    ): Map<String, String> {
+        val map = HashMap<String, String>()
+        map.put(ApiService.PARAM_USER_ID, userId.toString())
+        map.put(ApiService.PARAM_TOKEN, token)
+        map.put(ApiService.PARAM_LAST_SEEN, lastSeen.toString())
         return map
     }
 }
