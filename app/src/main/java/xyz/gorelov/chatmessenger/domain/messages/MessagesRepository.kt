@@ -14,4 +14,6 @@ interface MessagesRepository {
     fun getChats(needFetch: Boolean): Either<Failure, List<MessageEntity>>
 
     fun getMessagesWithContact(contactId: Long, needFetch: Boolean): Either<Failure, List<MessageEntity>>
+
+    fun deleteMessagesByUser(messageId: Long): Either<Failure, None>
 }

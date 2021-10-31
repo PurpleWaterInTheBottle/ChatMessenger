@@ -18,5 +18,8 @@ data class FriendEntity(
     var status: String,
     var image: String,
     @ColumnInfo(name = "is_request")
-    var isRequest: Int = 0
+    var isRequest: Int = 0,
+    @ColumnInfo(name = "last_seen")
+    @SerializedName("last_seen")
+    var lastSeen: Long = 0
 )
