@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import xyz.gorelov.chatmessenger.databinding.ItemChatBinding
 import xyz.gorelov.chatmessenger.domain.messages.MessageEntity
-import xyz.gorelov.chatmessenger.ui.core.BaseAdapter
+import kotlinx.android.synthetic.main.fragment_account.*
 
-open class ChatsAdapter : BaseAdapter<ChatsAdapter.ChatViewHolder>() {
+open class ChatsAdapter : MessagesAdapter() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = ItemChatBinding.inflate(layoutInflater, parent, false)
         return ChatViewHolder(binding)

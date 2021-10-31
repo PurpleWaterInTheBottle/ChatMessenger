@@ -59,6 +59,7 @@ ext {
     permissionUtilsVersion = "1.0.9"
     glideVersion = "4.9.0"
     roomVersion = "2.3.0"
+    photoViewVersion = "2.3.0"
 }
 
 dependencies {
@@ -98,6 +99,9 @@ dependencies {
     //room
     implementation "androidx.room:room-runtime:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
+
+    //photo view
+    implementation "com.github.chrisbanes:PhotoView:$photoViewVersion"
 
     //lifecycle
     kapt "androidx.lifecycle:lifecycle-compiler:$lifecycleVersion"

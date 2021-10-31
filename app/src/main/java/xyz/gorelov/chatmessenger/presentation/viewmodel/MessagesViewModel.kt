@@ -10,7 +10,6 @@ class MessagesViewModel @Inject constructor(
     val getMessagesUseCase: GetMessagesWithContact,
     val sendMessageUseCase: SendMessage,
     val deleteMessageUseCase: DeleteMessage
-
 ): BaseViewModel() {
     val getChatsData: MutableLiveData<List<MessageEntity>> = MutableLiveData()
     val getMessagesData: MutableLiveData<List<MessageEntity>> = MutableLiveData()

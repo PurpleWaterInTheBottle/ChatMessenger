@@ -6,7 +6,8 @@ import xyz.gorelov.chatmessenger.databinding.ItemFriendRequestBinding
 import xyz.gorelov.chatmessenger.domain.friends.FriendEntity
 import xyz.gorelov.chatmessenger.ui.core.BaseAdapter
 
-open class FriendRequestsAdapter : BaseAdapter<FriendRequestsAdapter.FriendRequestViewHolder>() {
+open class FriendRequestsAdapter :
+    BaseAdapter<FriendEntity, FriendRequestsAdapter.FriendRequestViewHolder>(FriendsAdapter.FriendsDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FriendRequestViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

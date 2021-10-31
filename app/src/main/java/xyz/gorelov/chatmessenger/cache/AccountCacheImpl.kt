@@ -3,8 +3,8 @@ package xyz.gorelov.chatmessenger.cache
 import xyz.gorelov.chatmessenger.data.account.AccountCache
 import xyz.gorelov.chatmessenger.domain.account.AccountEntity
 import xyz.gorelov.chatmessenger.domain.type.Either
-import xyz.gorelov.chatmessenger.domain.type.None
 import xyz.gorelov.chatmessenger.domain.type.Failure
+import xyz.gorelov.chatmessenger.domain.type.None
 import javax.inject.Inject
 
 class AccountCacheImpl @Inject constructor(

@@ -127,15 +127,17 @@ class NotificationHelper @Inject constructor(
 
         getMessagesWithContact(GetMessagesWithContact.Params(message.senderId, true))
 
-        val intent = Intent(context, MessagesActivity::class.java)
+        val intent = Intent(context, HomeActivity::class.java)
 
         intent.putExtra(ApiService.PARAM_CONTACT_ID, message.contact?.id)
         intent.putExtra(ApiService.PARAM_NAME, message.contact?.name)
         intent.putExtra("type", TYPE_SEND_MESSAGE)
 
+        val text = if (message.type == 1) message.message else getString(R.string.photo)
+
         createNotification(
             "${message.contact?.name} ${context.getString(R.string.send_message)}",
-            message.message,
+            text,
             intent
         )
     }
@@ -163,6 +165,7 @@ class NotificationHelper @Inject constructor(
         val senderUser = jsonMessage.getJSONObject(ApiService.PARAM_SENDER_USER)
         val senderName = senderUser.getString(ApiService.PARAM_NAME)
         val senderImage = senderUser.getString(ApiService.PARAM_IMAGE)
+        val lastSeen = senderUser.getLong(ApiService.PARAM_LAST_SEEN)
 
         val id = jsonMessage.getLong(ApiService.PARAM_MESSAGE_ID)
         val senderId = jsonMessage.getLong(ApiService.PARAM_SENDER_USER_ID)
@@ -170,7 +173,7 @@ class NotificationHelper @Inject constructor(
         val message = jsonMessage.getString(ApiService.PARAM_MESSAGE)
         val type = jsonMessage.getInt(ApiService.PARAM_MESSAGE_TYPE)
 
-        return MessageEntity(id, senderId, receiverId, message, 0, type, ContactEntity(senderId, senderName, senderImage))
+        return MessageEntity(id, senderId, receiverId, message, 0, type, ContactEntity(senderId, senderName, senderImage, lastSeen))
     }
 
     private fun createNotification(title: String, message: String, intent: Intent) {

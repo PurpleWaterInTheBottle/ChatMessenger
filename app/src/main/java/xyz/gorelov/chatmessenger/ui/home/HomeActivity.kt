@@ -15,6 +15,7 @@ import xyz.gorelov.chatmessenger.domain.type.Failure
 import xyz.gorelov.chatmessenger.domain.friends.FriendEntity
 import xyz.gorelov.chatmessenger.presentation.viewmodel.FriendsViewModel
 import xyz.gorelov.chatmessenger.presentation.viewmodel.AccountViewModel
+import xyz.gorelov.chatmessenger.remote.service.ApiService
 import xyz.gorelov.chatmessenger.ui.App
 import xyz.gorelov.chatmessenger.ui.core.BaseActivity
 import xyz.gorelov.chatmessenger.ui.core.BaseFragment
@@ -44,7 +45,6 @@ class HomeActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setupContent()
 
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
 
@@ -62,8 +62,6 @@ class HomeActivity : BaseActivity() {
             onFailure(failureData, ::handleFailure)
         }
 
-        accountViewModel.getAccount()
-
         supportActionBar?.setHomeAsUpIndicator(R.drawable.menu)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -76,6 +74,11 @@ class HomeActivity : BaseActivity() {
                 openDrawer()
                 friendsViewModel.getFriendRequests()
                 binding.navigation.requestContainer.visibility = View.VISIBLE
+            }
+            NotificationHelper.TYPE_SEND_MESSAGE -> {
+                val contactId = intent.getLongExtra(ApiService.PARAM_CONTACT_ID, 0L)
+                val contactName = intent.getStringExtra(ApiService.PARAM_NAME)
+                navigator.showChatWithContact(contactId, contactName.toString(), this)
             }
         }
 
@@ -106,8 +109,6 @@ class HomeActivity : BaseActivity() {
             replaceFragment(FriendsFragment())
             closeDrawer()
         }
-
-        supportFragmentManager.beginTransaction().replace(R.id.requestContainer, FriendRequestsFragment()).commit()
 
         binding.navigation.btnRequests.setOnClickListener {
             friendsViewModel.getFriendRequests(true)
@@ -144,6 +145,7 @@ class HomeActivity : BaseActivity() {
     override fun onResume() {
         super.onResume()
         accountViewModel.getAccount()
+        accountViewModel.updateLastSeen()
     }
 
     private fun openDrawer() {

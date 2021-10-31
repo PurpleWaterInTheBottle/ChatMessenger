@@ -2,11 +2,12 @@ package xyz.gorelov.chatmessenger.ui.friends
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import xyz.gorelov.chatmessenger.databinding.ItemFriendBinding
 import xyz.gorelov.chatmessenger.domain.friends.FriendEntity
 import xyz.gorelov.chatmessenger.ui.core.BaseAdapter
 
-open class FriendsAdapter : BaseAdapter<FriendsAdapter.FriendViewHolder>() {
+open class FriendsAdapter : BaseAdapter<FriendEntity, FriendsAdapter.FriendViewHolder>(FriendsDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FriendViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -25,6 +26,17 @@ open class FriendsAdapter : BaseAdapter<FriendsAdapter.FriendViewHolder>() {
             (item as? FriendEntity)?.let {
                 binding.friend = it
             }
+        }
+    }
+
+    class FriendsDiffCallback : DiffUtil.ItemCallback<FriendEntity>() {
+
+        override fun areItemsTheSame(oldItem: FriendEntity, newItem: FriendEntity): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: FriendEntity, newItem: FriendEntity): Boolean {
+            return oldItem == newItem
         }
     }
 }

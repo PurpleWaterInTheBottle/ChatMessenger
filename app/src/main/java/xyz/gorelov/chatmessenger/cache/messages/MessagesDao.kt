@@ -1,7 +1,7 @@
 package xyz.gorelov.chatmessenger.cache.messages
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
+import androidx.lifecycle.LiveData
 import xyz.gorelov.chatmessenger.data.messages.MessagesCache
 import xyz.gorelov.chatmessenger.domain.messages.MessageEntity
 

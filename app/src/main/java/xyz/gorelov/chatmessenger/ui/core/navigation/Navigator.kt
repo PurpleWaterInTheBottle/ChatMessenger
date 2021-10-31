@@ -1,12 +1,16 @@
 package xyz.gorelov.chatmessenger.ui.core.navigation
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.dialog_image.view.*
 import xyz.gorelov.chatmessenger.R
 import xyz.gorelov.chatmessenger.domain.friends.FriendEntity
 import xyz.gorelov.chatmessenger.presentation.Authenticator
@@ -79,6 +83,7 @@ class Navigator
         bundle.putString(ApiService.PARAM_NAME, friendEntity.name)
         bundle.putString(ApiService.PARAM_EMAIL, friendEntity.email)
         bundle.putString(ApiService.PARAM_STATUS, friendEntity.status)
+        bundle.putLong(ApiService.PARAM_CONTACT_ID, friendEntity.id)
         context.startActivity<UserActivity>(args = bundle)
     }
 
@@ -127,6 +132,36 @@ class Navigator
         intent.type = "image/*"
 
         activity.startActivityForResult(intent, MediaViewModel.PICK_IMAGE_REQUEST_CODE)
+    }
+
+    fun showDeleteMessageDialog(context: Context, onPositive: () -> Unit) {
+        AlertDialog.Builder(context)
+            .setMessage(context.getString(R.string.remove_message))
+
+            .setPositiveButton(android.R.string.yes) { dialog, which ->
+                onPositive()
+                dialog.dismiss()
+            }
+
+            .setNegativeButton(android.R.string.no, null)
+            .setIcon(android.R.drawable.ic_dialog_alert)
+            .show()
+    }
+
+    fun showImageDialog(context: Context, image: Drawable) {
+        val view = LayoutInflater.from(context).inflate(
+            R.layout.dialog_image,
+            null
+        )
+
+        val dialog = Dialog(context, R.style.DialogFullscreen)
+
+        view.imageView.setImageDrawable(image)
+        dialog.setContentView(view)
+
+        view.imageView.setOnClickListener { dialog.dismiss() }
+
+        dialog.show()
     }
 }
 

@@ -16,8 +16,11 @@ import xyz.gorelov.chatmessenger.ui.friends.FriendRequestsFragment
 import xyz.gorelov.chatmessenger.ui.friends.FriendsFragment
 import xyz.gorelov.chatmessenger.ui.home.ChatsFragment
 import xyz.gorelov.chatmessenger.ui.home.HomeActivity
+import xyz.gorelov.chatmessenger.ui.home.MessagesActivity
 import xyz.gorelov.chatmessenger.ui.home.MessagesFragment
 import xyz.gorelov.chatmessenger.ui.login.LoginFragment
+import xyz.gorelov.chatmessenger.ui.user.UserActivity
+import xyz.gorelov.chatmessenger.ui.user.UserFragment
 import javax.inject.Singleton
 
 class App : Application() {
@@ -47,6 +50,8 @@ interface AppComponent {
     fun inject(activity: RouteActivity)
     fun inject(activity: HomeActivity)
     fun inject(activity: AccountActivity)
+    fun inject(activity: MessagesActivity)
+    fun inject(activity: UserActivity)
 
     //fragments
     fun inject(fragment: RegisterFragment)
@@ -56,6 +61,7 @@ interface AppComponent {
     fun inject(fragment: FriendRequestsFragment)
     fun inject(fragment: AccountFragment)
     fun inject(fragment: MessagesFragment)
+    fun inject(fragment: UserFragment)
 
     //services
     fun inject(service: FirebaseService)

@@ -11,7 +11,6 @@ import xyz.gorelov.chatmessenger.remote.core.Request
 import xyz.gorelov.chatmessenger.remote.service.ApiService
 import java.util.*
 import javax.inject.Inject
-import kotlin.collections.HashMap
 
 class MessagesRemoteImpl @Inject constructor(
     private val request: Request,

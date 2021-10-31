@@ -31,6 +31,19 @@
             android:src="@drawable/ic_account_circle"
             app:profileImage="@{friend.image}"/>
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgOnline"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/white"
+            android:layout_alignEnd="@+id/imgPhoto"
+            android:layout_alignBottom="@+id/imgPhoto"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:src="@color/colorPrimary"
+            app:lastSeen="@{friend.lastSeen}"/>
+
         <LinearLayout
             android:layout_centerVertical="true"
             android:id="@+id/contact_name_and_status"
