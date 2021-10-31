@@ -29,4 +29,6 @@ interface AccountRemote {
     ): Either<Failure, AccountEntity>
 
     fun updateAccountLastSeen(userId: Long, token: String, lastSeen: Long): Either<Failure, None>
+
+    fun forgetPassword(email: String): Either<Failure, None>
 }
