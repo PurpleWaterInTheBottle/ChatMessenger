@@ -45,6 +45,8 @@ fun <T : BaseResponse> Response<T>.parseError(): Failure {
         "already found in your friend requests",
         "you requested adding this friend before" -> Failure.AlreadyRequestedFriendError
         "No Contact has this email" -> Failure.ContactNotFoundError
+        " this email is not registered before" -> Failure.EmailNotRegisteredError
+        "can't send email to you" -> Failure.CantSendEmailError
         else -> Failure.ServerError
     }
 }

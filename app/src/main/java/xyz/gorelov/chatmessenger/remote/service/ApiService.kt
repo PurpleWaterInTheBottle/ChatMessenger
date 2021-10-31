@@ -28,6 +28,7 @@ interface ApiService {
         const val GET_MESSAGES_WITH_CONTACT = "getMessagesByUserWithContact.php"
         const val DELETE_MESSAGES_BY_USER = "deleteMessagesByUser.php"
         const val UPDATE_USER_LAST_SEEN = "updateUserLastSeen.php"
+        const val FORGET_PASSWORD = "forget_password.php"
 
         //params
         const val PARAM_EMAIL = "email"
@@ -70,6 +71,10 @@ interface ApiService {
     @FormUrlEncoded
     @POST(LOGIN)
     fun login(@FieldMap params: Map<String, String>): Call<AuthResponse>
+
+    @FormUrlEncoded
+    @POST(FORGET_PASSWORD)
+    fun forgetPassword(@FieldMap params: Map<String, String>): Call<BaseResponse>
 
     @FormUrlEncoded
     @POST(UPDATE_TOKEN)
