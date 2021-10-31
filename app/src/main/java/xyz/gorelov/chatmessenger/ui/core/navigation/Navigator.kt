@@ -20,6 +20,7 @@ import xyz.gorelov.chatmessenger.ui.account.AccountActivity
 import xyz.gorelov.chatmessenger.ui.core.PermissionManager
 import xyz.gorelov.chatmessenger.ui.home.HomeActivity
 import xyz.gorelov.chatmessenger.ui.home.MessagesActivity
+import xyz.gorelov.chatmessenger.ui.login.ForgetPasswordActivity
 import xyz.gorelov.chatmessenger.ui.login.LoginActivity
 import xyz.gorelov.chatmessenger.ui.register.RegisterActivity
 import xyz.gorelov.chatmessenger.ui.user.UserActivity
@@ -40,6 +41,8 @@ class Navigator
     }
 
     fun showLogin(context: Context, newTask: Boolean = true) = context.startActivity<LoginActivity>(newTask = newTask)
+
+    fun showForgedPassword(context: Context) = context.startActivity<ForgetPasswordActivity>()
 
     fun showHome(context: Context, newTask: Boolean = true) = context.startActivity<HomeActivity>(newTask = newTask)
 

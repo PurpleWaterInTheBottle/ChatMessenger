@@ -47,7 +47,11 @@ class AccountFragment : BaseFragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        mediaViewModel.onPickImageResult(requestCode, resultCode, data)
+        if (::mediaViewModel.isInitialized) {
+            mediaViewModel.onPickImageResult(requestCode, resultCode, data)
+        } else {
+            showMessage(getString(R.string.error_picking_file))
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

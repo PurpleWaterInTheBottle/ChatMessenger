@@ -18,6 +18,7 @@ import xyz.gorelov.chatmessenger.ui.home.ChatsFragment
 import xyz.gorelov.chatmessenger.ui.home.HomeActivity
 import xyz.gorelov.chatmessenger.ui.home.MessagesActivity
 import xyz.gorelov.chatmessenger.ui.home.MessagesFragment
+import xyz.gorelov.chatmessenger.ui.login.ForgetPasswordFragment
 import xyz.gorelov.chatmessenger.ui.login.LoginFragment
 import xyz.gorelov.chatmessenger.ui.user.UserActivity
 import xyz.gorelov.chatmessenger.ui.user.UserFragment
@@ -62,6 +63,7 @@ interface AppComponent {
     fun inject(fragment: AccountFragment)
     fun inject(fragment: MessagesFragment)
     fun inject(fragment: UserFragment)
+    fun inject(fragment: ForgetPasswordFragment)
 
     //services
     fun inject(service: FirebaseService)

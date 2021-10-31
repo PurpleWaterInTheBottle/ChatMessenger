@@ -47,6 +47,9 @@
         <!--Messages-->
         <activity android:name=".ui.home.MessagesActivity"/>
 
+        <!--Forget Password-->
+        <activity android:name=".ui.login.ForgetPasswordActivity"/>
+
         <!--SERVICES-->
         <!--Firebase-->
         <service android:name=".ui.firebase.FirebaseService"

@@ -115,6 +115,7 @@
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/btnRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

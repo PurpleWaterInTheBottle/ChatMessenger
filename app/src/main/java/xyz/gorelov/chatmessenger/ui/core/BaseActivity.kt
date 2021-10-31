@@ -98,6 +98,8 @@ abstract class BaseActivity : AppCompatActivity() {
             is Failure.AlreadyFriendError -> showMessage(getString(R.string.error_already_friend))
             is Failure.AlreadyRequestedFriendError -> showMessage(getString(R.string.error_already_requested_friend))
             is Failure.FilePickError -> showMessage(getString(R.string.error_picking_file))
+            is Failure.EmailNotRegisteredError -> showMessage(getString(R.string.email_not_registered))
+            is Failure.CantSendEmailError -> showMessage(getString(R.string.error_cant_send_email))
         }
     }
 
