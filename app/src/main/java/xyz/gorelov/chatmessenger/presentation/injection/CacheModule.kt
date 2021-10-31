@@ -23,7 +23,7 @@ class CacheModule {
 
     @Singleton
     @Provides
-    fun provideAccountCache(prefsManager: SharedPrefsManager): AccountCache = AccountCacheImpl(prefsManager)
+    fun provideAccountCache(prefsManager: SharedPrefsManager, chatDatabase: ChatDatabase): AccountCache = AccountCacheImpl(prefsManager, chatDatabase)
 
     @Provides
     @Singleton
